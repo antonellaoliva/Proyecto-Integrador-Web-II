@@ -175,5 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('carrito', JSON.stringify(carrito));
          }
+
 });
 

@@ -10,7 +10,16 @@
                 carrito.forEach((item) => {
                     const miNodo = document.createElement('li');
                     miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-                    miNodo.textContent = `${item.title} x ${item.cantidad} - $${item.price * item.cantidad}`;
+                    
+                    const imagen = document.createElement('img');
+                    imagen.src = item.image; 
+                    imagen.alt = item.title; 
+                    imagen.classList.add('carrito-imagen');
+                    miNodo.appendChild(imagen);
+
+                    const textoProducto = document.createElement('span');
+                    textoProducto.textContent = `${item.title} x ${item.cantidad} - $${(item.price * item.cantidad).toFixed(2)}`;
+                    miNodo.appendChild(textoProducto);
 
                     const miBotonEliminar = document.createElement('button');
                     miBotonEliminar.classList.add('btn', 'btn-danger', 'mx-2');
